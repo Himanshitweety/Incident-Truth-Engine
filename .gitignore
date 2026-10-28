@@ -1,2 +1,11 @@
+.venv/
+venv/
+
+__pycache__/
+*.pyc
+.pytest_cache/
+*.py[cod]
+
 .env
-.env.*
+
+.vscode/
