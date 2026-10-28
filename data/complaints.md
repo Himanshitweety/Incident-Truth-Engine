@@ -1,0 +1,2 @@
+## Case 01
+My order ORD-1001 was delivered, and I requested a refund of ₹2,000. An agent told me on 25 September that my refund had been processed, but it still shows as pending and I haven't received the money. Can you check what is going on?
