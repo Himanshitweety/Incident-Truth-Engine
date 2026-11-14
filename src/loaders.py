@@ -36,5 +36,17 @@ def load_csv(file_path , required_columns):
             
             
 
+# if __name__ == "__main__":
+#     print(load_csv("data/orders.csv" , Required_columns["orders"]))
+def load_all(data_folder):
+    results = {}         
+
+    for name in Required_columns:
+        path = f"{data_folder}/{name}.csv"      
+        columns = Required_columns[name]                          
+        results[name] = load_csv(path , columns)                   
+    return results
+
 if __name__ == "__main__":
-    print(load_csv("data/orders.csv" , Required_columns["orders"]))
+     all_data = load_all("data")
+     print(all_data)
