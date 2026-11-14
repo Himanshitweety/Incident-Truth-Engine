@@ -33,11 +33,8 @@ def load_csv(file_path , required_columns):
             problems.append(f"file not found : {file_path}")
 
     return {"rows": rows , "problems" : problems}
-            
-            
 
-# if __name__ == "__main__":
-#     print(load_csv("data/orders.csv" , Required_columns["orders"]))
+
 def load_all(data_folder):
     results = {}         
 
