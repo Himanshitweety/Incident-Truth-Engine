@@ -1,3 +1,5 @@
+from loaders import load_all
+
 Allowed_statuses = {
     "order_status": ["Pending", "Shipped", "Delivered", "Cancelled"],
     "payment_status": ["Succeeded", "Pending", "Failed"],
@@ -29,24 +31,22 @@ def clean_status(value , allowed):
         "flag": f"invalid status: '{value}'"
     }
 
+def clean_status_column(rows, id_column, status_column, allowed):
+    results = []
 
-if __name__ == "__main__":
-    test_values = [
-        "Delivered",
-        "  delivered ",
-        "DELIVERED",
-        "Delivred",
-        None,
-        "",
-        "   ",
-    
-    ]
+    for row in rows:
+        status_value = row.get(status_column, "")
+        checked = clean_status(status_value ,allowed)
 
-    allowed = Allowed_statuses["order_status"]
-
-    for value in test_values:
-        result = clean_status(value, allowed)
-        print(result)
+        entry = {
+            "record_id" : row[id_column],
+            "column" : status_column,
+            "original": checked["original"],
+            "clean" : checked["clean"],
+            "flag" : checked["flag"]
+        }
+        results.append(entry)
+    return results
 
 
     
