@@ -44,9 +44,9 @@ def clean_status_column(rows, id_column, status_column, allowed):
             "original": checked["original"],
             "clean" : checked["clean"],
             "flag" : checked["flag"]
-        }
+        }           
         results.append(entry)
     return results
 
-
+ 
     
